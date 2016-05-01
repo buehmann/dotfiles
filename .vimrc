@@ -17,14 +17,19 @@ set shiftwidth=2
 set shiftround
 set smartindent
 set autoindent
+
 set modeline
 set mouse=a
 set laststatus=2
 set scrolloff=2
+
 set hlsearch
+set incsearch
+
+set pastetoggle=<F10>
 
 autocmd FileType ruby set sw=2 sts=2 et tw=80
 
-set cc=+0
+set colorcolumn=+0
 hi ColorColumn ctermbg=darkgrey
 hi SignColumn ctermbg=darkgrey
