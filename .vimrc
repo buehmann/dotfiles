@@ -1,6 +1,4 @@
-if &term =~ "xterm"
-  set background=dark
-endif
+set background=dark
 
 execute pathogen#infect()
 syntax enable
@@ -29,7 +27,6 @@ set autoindent
 set modeline
 set modelines=3
 set mouse=a
-set background=dark
 set hlsearch
 set ruler
 set laststatus=2
