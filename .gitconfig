@@ -1,0 +1,21 @@
+# vim:ft=gitconfig:noet:sw=8
+[alias]
+	co = checkout
+	ci = ci-status -v
+[color]
+	ui = true
+[merge]
+	tool = vimdiff
+[rerere]
+	enabled = true
+[rebase]
+	autoSquash = true
+[grep]
+	patternType = perl
+[push]
+	default = simple
+[hub]
+	host = github.fidor.de
+	protocol = ssh
+[include]
+	path = ~/.gitconfig.local
