@@ -15,6 +15,8 @@ filetype plugin indent on
 set updatetime=250
 let g:gitgutter_sign_column_always = 1
 
+let g:github_enterprise_urls = ['https://github.fidor.de']
+
 let g:is_bash=1
 
 set title
@@ -37,7 +39,7 @@ set incsearch
 
 set pastetoggle=<F10>
 
-autocmd Filetype ruby setlocal shiftwidth=2 sts=2 expandtab textwidth=80 
+autocmd Filetype ruby setlocal shiftwidth=2 sts=2 expandtab textwidth=80
 
 set colorcolumn=+0
 hi ColorColumn ctermbg=234
