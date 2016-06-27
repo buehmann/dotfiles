@@ -2,8 +2,15 @@
 [alias]
 	co = checkout
 	ci = ci-status -v
+	ls = log --pretty=format:'%C(yellow)%h %Creset%s %Cgreen(%ar) %C(blue bold)<%cN>%Creset'
+	bb = branch -r --list 'bueh*'
+	p = pull-request -o
 [color]
 	ui = true
+[log]
+	decorate = short
+[pull]
+	ff = only
 [merge]
 	tool = vimdiff
 [rerere]
@@ -13,9 +20,10 @@
 [grep]
 	patternType = perl
 [push]
-	default = simple
+	default = current
 [hub]
 	host = github.fidor.de
 	protocol = ssh
+	host = github.com
 [include]
 	path = ~/.gitconfig.local
