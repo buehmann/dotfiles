@@ -1,6 +1,8 @@
 set background=dark
 
 execute pathogen#infect()
+
+filetype plugin indent on
 syntax enable
 
 let g:airline#extensions#tabline#enabled = 1
@@ -9,8 +11,6 @@ let g:airline_powerline_fonts = 1
 if has('mouse_sgr')
   set ttymouse=sgr
 endif
-
-filetype plugin indent on
 
 set updatetime=250
 let g:gitgutter_sign_column_always = 1
@@ -31,13 +31,18 @@ set modelines=3
 set mouse=a
 set hlsearch
 set ruler
+set wildmenu
 set laststatus=2
 set scrolloff=2
+set sidescrolloff=5
+set display+=lastline
 
 set hlsearch
 set incsearch
 
 set pastetoggle=<F10>
+
+runtime! macros/matchit.vim
 
 autocmd Filetype ruby setlocal shiftwidth=2 sts=2 expandtab textwidth=80
 
