@@ -22,8 +22,8 @@
 [push]
 	default = current
 [hub]
+	host = github.com
 	host = github.fidor.de
 	protocol = ssh
-	host = github.com
 [include]
 	path = ~/.gitconfig.local
