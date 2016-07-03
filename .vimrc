@@ -45,6 +45,7 @@ set pastetoggle=<F10>
 runtime! macros/matchit.vim
 
 autocmd Filetype ruby setlocal shiftwidth=2 sts=2 expandtab textwidth=80
+let ruby_space_errors = 1
 
 set colorcolumn=+0
 hi ColorColumn ctermbg=234
