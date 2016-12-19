@@ -1,3 +1,4 @@
+set termguicolors
 set background=dark
 
 execute pathogen#infect()
@@ -48,5 +49,5 @@ autocmd Filetype ruby setlocal shiftwidth=2 sts=2 expandtab textwidth=80
 let ruby_space_errors = 1
 
 set colorcolumn=+0
-hi ColorColumn ctermbg=234
-hi SignColumn ctermbg=234
+hi ColorColumn guibg=black
+hi SignColumn guibg=black
