@@ -1,13 +1,19 @@
-set termguicolors
-set background=dark
-
 execute pathogen#infect()
 
-filetype plugin indent on
 syntax enable
+filetype plugin indent on
+
+if has('termguicolors')
+  set termguicolors
+else
+  set t_Co=256
+endif
+
+colorscheme OceanicNext
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
+let g:airline_theme='oceanicnext'
 
 if has('mouse_sgr')
   set ttymouse=sgr
@@ -37,6 +43,8 @@ set laststatus=2
 set scrolloff=2
 set sidescrolloff=5
 set display+=lastline
+set number
+set relativenumber
 
 set hlsearch
 set incsearch
@@ -48,6 +56,6 @@ runtime! macros/matchit.vim
 autocmd Filetype ruby setlocal shiftwidth=2 sts=2 expandtab textwidth=80
 let ruby_space_errors = 1
 
-set colorcolumn=+0
-hi ColorColumn guibg=black
-hi SignColumn guibg=black
+" set colorcolumn=+0
+" hi ColorColumn guibg=black
+" hi SignColumn guibg=black
