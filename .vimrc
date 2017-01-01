@@ -111,4 +111,4 @@ noremap <Esc> :nohl<CR>
 command! -bang -nargs=* GGrep
   \ call fzf#vim#grep('git grep --line-number '.shellescape(<q-args>), 0, <bang>0)
 
-noremap <leader>\ :NERDTreeToggle<CR>
+map <C-n> :NERDTreeToggle<CR>
