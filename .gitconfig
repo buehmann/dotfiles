@@ -2,7 +2,8 @@
 [alias]
 	co = checkout
 	ci = ci-status -v
-	ls = log --pretty=format:'%C(yellow)%h %Creset%s %Cgreen(%ar) %C(blue bold)<%cN>%Creset'
+	cb = check-branches
+	ls = log --pretty=format:'%C(yellow)%h  %C(blue bold)%<(20,trunc)%cN  %Cgreen%<(13,trunc)%ar  %Creset%s'
 	bb = branch -r --list 'bueh*'
 	p = pull-request -o
 [color]
@@ -13,6 +14,10 @@
 	ff = only
 [merge]
 	tool = vimdiff
+[mergetool]
+	prompt = true
+[mergetool "vimdiff"]
+	cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
 [rerere]
 	enabled = true
 [rebase]
@@ -27,3 +32,5 @@
 	protocol = ssh
 [include]
 	path = ~/.gitconfig.local
+[interactive]
+	singleKey = true
