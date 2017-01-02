@@ -19,6 +19,8 @@ let g:github_enterprise_urls = ['https://github.fidor.de']
 
 let g:is_bash=1
 
+let g:ctrlp_clear_cache_on_exit = 0
+
 set title
 set shiftwidth=2
 set expandtab
