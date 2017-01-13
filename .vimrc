@@ -3,6 +3,8 @@ if &compatible
   set nocompatible
 endif
 
+let mapleader = ','
+
 " Required:
 " Let dein manage dein
 set runtimepath+=~/.vim/repos/github.com/Shougo/dein.vim
