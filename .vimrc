@@ -74,6 +74,7 @@ let g:python3_host_prog = '/usr/bin/python3'
 let g:NERDTreeQuitOnOpen = 1
 
 let g:ctrlp_clear_cache_on_exit = 0
+let g:CommandTFileScanner = 'git'
 
 set title
 set shiftwidth=2
