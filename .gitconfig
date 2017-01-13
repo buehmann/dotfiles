@@ -32,3 +32,5 @@
 	path = ~/.gitconfig.local
 [interactive]
 	singleKey = true
+[mergetool]
+	keepBackup = false
