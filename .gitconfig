@@ -14,10 +14,8 @@
 	ff = only
 [merge]
 	tool = vimdiff
-[mergetool]
-	prompt = true
 [mergetool "vimdiff"]
-	cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+	path = nvim
 [rerere]
 	enabled = true
 [rebase]
