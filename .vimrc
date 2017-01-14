@@ -3,39 +3,49 @@ if &compatible
   set nocompatible
 endif
 
-let mapleader = ','
-
 " Required:
-" Let dein manage dein
 set runtimepath+=~/.vim/repos/github.com/Shougo/dein.vim
-call dein#begin('~/.vim')
-call dein#add('Shougo/dein.vim')
-
-" Add or remove your plugins here:
-call dein#add('airblade/vim-gitgutter')
-call dein#add('ctrlpvim/ctrlp.vim')
-call dein#add('junegunn/fzf', { 'build': './install --all' })
-call dein#add('junegunn/fzf.vim')
-call dein#add('mhartington/oceanic-next')
-call dein#add('neomake/neomake')
-call dein#add('scrooloose/nerdtree')
-call dein#add('tpope/vim-bundler')
-call dein#add('tpope/vim-commentary')
-call dein#add('tpope/vim-endwise')
-call dein#add('tpope/vim-fugitive')
-call dein#add('tpope/vim-rails')
-call dein#add('tpope/vim-repeat')
-call dein#add('tpope/vim-rhubarb')
-call dein#add('tpope/vim-surround')
-call dein#add('vim-airline/vim-airline')
-call dein#add('vim-scripts/confluencewiki.vim')
-call dein#add('wincent/command-t')
-
-" You can specify revision/branch/tag.
-"call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
 
 " Required:
-call dein#end()
+if dein#load_state('~/.vim')
+  call dein#begin('~/.vim')
+
+  " Let dein manage dein
+  " Required:
+  call dein#add('~/.vim/repos/github.com/Shougo/dein.vim')
+
+  " Add or remove your plugins here:
+  call dein#add('airblade/vim-gitgutter')
+  call dein#add('christoomey/vim-sort-motion')
+  call dein#add('ctrlpvim/ctrlp.vim')
+  call dein#add('junegunn/fzf', { 'build': './install --all' })
+  call dein#add('junegunn/fzf.vim')
+  call dein#add('kana/vim-textobj-user')
+  call dein#add('mhartington/oceanic-next')
+  call dein#add('nelstrom/vim-textobj-rubyblock')
+  call dein#add('neomake/neomake')
+  call dein#add('scrooloose/nerdtree')
+  call dein#add('tpope/vim-bundler')
+  call dein#add('tpope/vim-commentary')
+  call dein#add('tpope/vim-endwise')
+  call dein#add('tpope/vim-fugitive')
+  call dein#add('tpope/vim-rails')
+  call dein#add('tpope/vim-repeat')
+  call dein#add('tpope/vim-rhubarb')
+  call dein#add('tpope/vim-surround')
+  call dein#add('vim-airline/vim-airline')
+  call dein#add('vim-scripts/confluencewiki.vim')
+  call dein#add('wincent/command-t')
+
+  " You can specify revision/branch/tag.
+  " call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
+
+  " Required:
+  call dein#end()
+  call dein#save_state()
+endif
+
+" Required:
 filetype plugin indent on
 syntax enable
 
@@ -45,6 +55,8 @@ syntax enable
 "endif
 
 " End dein setup -------------------------
+
+let mapleader = ','
 
 if has('termguicolors')
   set termguicolors
@@ -62,7 +74,7 @@ if has('mouse_sgr')
   set ttymouse=sgr
 endif
 
-set updatetime=250
+set updatetime=1500
 let g:gitgutter_sign_column_always = 1
 
 let g:github_enterprise_urls = ['https://github.fidor.de']
