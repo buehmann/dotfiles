@@ -36,7 +36,7 @@ if dein#load_state('~/.vim')
   call dein#add('tpope/vim-surround')
   call dein#add('vim-airline/vim-airline')
   call dein#add('vim-scripts/confluencewiki.vim')
-  call dein#add('wincent/command-t')
+  call dein#add('wincent/command-t', { 'build': 'sh -c "cd ruby/command-t && ruby extconf.rb && make"' })
 
   " You can specify revision/branch/tag.
   " call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
