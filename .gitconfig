@@ -4,6 +4,7 @@
 	ci = ci-status -v
 	cb = check-branches
 	ls = log --pretty=format:'%C(yellow)%h  %C(blue bold)%<(20,trunc)%cN  %Cgreen%<(13,trunc)%ar  %Creset%s'
+	l1 = log --oneline
 	bb = branch -r --list 'bueh*'
 	p = pull-request -o
 [color]
