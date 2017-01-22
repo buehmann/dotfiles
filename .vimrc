@@ -136,3 +136,7 @@ command! -bang -nargs=* GGrep
   \ call fzf#vim#grep('git grep --line-number '.shellescape(<q-args>), 0, <bang>0)
 
 map <C-n> :NERDTreeToggle<CR>
+
+noremap <leader>gb :Gblame<CR>
+noremap <leader>gh :Gbrowse<CR>
+noremap <leader>gs :Gstatus<CR>
