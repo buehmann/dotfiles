@@ -3,16 +3,15 @@ if &compatible
   set nocompatible
 endif
 
-" Required:
-set runtimepath+=~/.vim/repos/github.com/Shougo/dein.vim
+let s:vim = "~/.vim"
+let s:dein = s:vim . "/repos/github.com/Shougo/dein.vim"
+let &runtimepath .= "," . s:dein
 
-" Required:
-if dein#load_state('~/.vim')
-  call dein#begin('~/.vim')
+if dein#load_state(s:vim)
+  call dein#begin(s:vim)
 
   " Let dein manage dein
-  " Required:
-  call dein#add('~/.vim/repos/github.com/Shougo/dein.vim')
+  call dein#add(s:dein)
 
   " Add or remove your plugins here:
   call dein#add('airblade/vim-gitgutter')
@@ -42,12 +41,10 @@ if dein#load_state('~/.vim')
   " You can specify revision/branch/tag.
   " call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
 
-  " Required:
   call dein#end()
   call dein#save_state()
 endif
 
-" Required:
 filetype plugin indent on
 syntax enable
 
@@ -58,7 +55,7 @@ syntax enable
 
 " End dein setup -------------------------
 
-let mapleader = ','
+let g:mapleader = ','
 
 if has('termguicolors')
   set termguicolors
@@ -117,7 +114,7 @@ augroup filetype_ruby
   autocmd!
   autocmd Filetype ruby setlocal shiftwidth=2 sts=2 expandtab textwidth=80
 augroup END
-let ruby_space_errors = 1
+let g:ruby_space_errors = 1
 
 " set colorcolumn=+0
 " hi ColorColumn guibg=black
