@@ -9,29 +9,31 @@
 	p = pull-request -o
 [color]
 	ui = true
+[grep]
+	patternType = perl
+[hub]
+	host = github.com
+	host = github.fidor.de
+	protocol = ssh
+[interactive]
+	singleKey = true
 [log]
 	decorate = short
-[pull]
-	ff = only
 [merge]
 	tool = vimdiff
+[mergetool]
+	keepBackup = false
 [mergetool "vimdiff"]
 	path = nvim
 [rerere]
 	enabled = true
 [rebase]
 	autoSquash = true
-[grep]
-	patternType = perl
+[pull]
+	ff = only
 [push]
 	default = current
-[hub]
-	host = github.com
-	host = github.fidor.de
-	protocol = ssh
+
+# Include machine-specific config
 [include]
 	path = ~/.gitconfig.local
-[interactive]
-	singleKey = true
-[mergetool]
-	keepBackup = false
