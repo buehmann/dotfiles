@@ -1,12 +1,12 @@
 # vim:ft=gitconfig:noet:sw=8
 [alias]
-	co = checkout
-	ci = ci-status -v
+	bb = branch -r --list 'buehmann/*'
 	cb = check-branches
-	ls = log --pretty=format:'%C(yellow)%h  %C(blue bold)%<(20,trunc)%cN  %Cgreen%<(13,trunc)%ar  %Creset%s'
-	l1 = log --oneline
-	bb = branch -r --list 'bueh*'
-	p = pull-request -o
+	ci = ci-status -v
+	co = checkout
+	l1 = log --oneline -n 1
+	lo = log --oneline
+	p  = pull-request -o
 [color]
 	ui = true
 [grep]
