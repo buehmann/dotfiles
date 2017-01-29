@@ -97,6 +97,7 @@ CDPATH=~/dev
 alias vim=nvim
 alias vimdiff="nvim -d"
 alias dotfiles="GIT_DIR=~/.dotfiles GIT_WORK_TREE=~ git"
+alias .f=dotfiles
 # dotfiles config status.showUntrackedFiles no
 # dotfiles remote add buehmann git@github.com:buehmann/dotfiles.git
 
