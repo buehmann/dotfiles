@@ -1,0 +1,39 @@
+# vim:ft=gitconfig:noet:sw=8
+[alias]
+	bb = branch -r --list 'buehmann/*'
+	cb = check-branches
+	ci = ci-status -v
+	co = checkout
+	l1 = log --oneline -n 1
+	lo = log --oneline
+	p  = pull-request -o
+[color]
+	ui = true
+[grep]
+	patternType = perl
+[hub]
+	host = github.com
+	host = github.fidor.de
+	protocol = ssh
+[interactive]
+	singleKey = true
+[log]
+	decorate = short
+[merge]
+	tool = vimdiff
+[mergetool]
+	keepBackup = false
+[mergetool "vimdiff"]
+	path = nvim
+[rerere]
+	enabled = true
+[rebase]
+	autoSquash = true
+[pull]
+	ff = only
+[push]
+	default = current
+
+# Include machine-specific config
+[include]
+	path = ~/.gitconfig.local
