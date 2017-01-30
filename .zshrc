@@ -1,10 +1,13 @@
-# Path to your oh-my-zsh installation.
-export ZSH=/Users/buehmann/.oh-my-zsh
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
+# Path to your oh-my-zsh installation.
+export ZSH=$HOME/.oh-my-zsh
+
+# Set name of the theme to load. Optionally, if you set this to "random"
+# it'll load a random theme each time that oh-my-zsh is loaded.
+# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+#ZSH_THEME="robbyrussell"
 ZSH_THEME="buehmann"
 
 # Uncomment the following line to use case-sensitive completion.
@@ -51,18 +54,19 @@ BUNDLED_COMMANDS=(rubocop)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git github rails ruby bundler docker)
+plugins=(git github ruby rails bundler docker docker-compose)
+
+source $ZSH/oh-my-zsh.sh
 
 # User configuration
-
-export PATH="/Users/buehmann/.rbenv/shims:/Users/buehmann/dev/deploy-tools/bin:/Users/buehmann/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin"
-export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 
 # export MANPATH="/usr/local/man:$MANPATH"
 export MANPATH="$HOME/share/man:$MANPATH"
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
-source $ZSH/oh-my-zsh.sh
+export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
+export PATH=$HOME/dev/deploy-tools/bin:$PATH
+export PATH=$HOME/.rbenv/shims:$PATH
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -73,12 +77,13 @@ source $ZSH/oh-my-zsh.sh
 # else
 #   export EDITOR='mvim'
 # fi
+export EDITOR=nvim
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
 # ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
+# export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -88,15 +93,17 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-export LESS="-FRSX"
 alias be="bundle exec"
 alias co="c|o"
 alias diff="colordiff"
 alias vim=nvim
+alias vimdiff="nvim -d"
+alias b="bc -lq"
 
-export GITHUB_HOST=github.fidor.de
-export EDITOR=nvim
-export GIT=hub
+alias dotfiles="GIT_DIR=~/.dotfiles GIT_WORK_TREE=~ git"
+alias .f=dotfiles
+# dotfiles config status.showUntrackedFiles no
+# dotfiles remote add buehmann git@github.com:buehmann/dotfiles.git
 
 cdpath=~/dev
 
@@ -107,6 +114,12 @@ bindkey -r "\M-B"
 # https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/docs/highlighters/main.md
 typeset -A ZSH_HIGHLIGHT_STYLES
 ZSH_HIGHLIGHT_STYLES[globbing]='fg=magenta,bold'
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+if [ -r /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
+  source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
+
+export GITHUB_HOST=github.fidor.de
+export GIT=hub
+export LESS="-FRSX"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
