@@ -67,6 +67,7 @@ export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
 export PATH=$HOME/dev/deploy-tools/bin:$PATH
 export PATH=$HOME/.rbenv/shims:$PATH
+export PATH=$HOME/bin:$PATH
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
