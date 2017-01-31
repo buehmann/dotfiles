@@ -62,9 +62,14 @@ source $ZSH/oh-my-zsh.sh
 
 # export MANPATH="/usr/local/man:$MANPATH"
 export MANPATH="$HOME/share/man:$MANPATH"
-export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
-export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
+# GNU coreutils on Mac OS (brew)
+coreutils=/usr/local/opt/coreutils/libexec
+if [[ -d $coreutils ]]; then
+  export MANPATH=$coreutils/gnuman:$MANPATH
+  export PATH=$coreutils/gnubin:$PATH
+fi
+
 export PATH=$HOME/dev/deploy-tools/bin:$PATH
 export PATH=$HOME/.rbenv/shims:$PATH
 export PATH=$HOME/bin:$PATH
@@ -112,15 +117,19 @@ cdpath=~/dev
 bindkey -s "\M-B\M- " " "
 bindkey -r "\M-B"
 
-# https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/docs/highlighters/main.md
-typeset -A ZSH_HIGHLIGHT_STYLES
-ZSH_HIGHLIGHT_STYLES[globbing]='fg=magenta,bold'
-if [ -r /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
-  source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-fi
-
 export GITHUB_HOST=github.fidor.de
 export GIT=hub
 export LESS="-FRSX"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/docs/highlighters/main.md
+typeset -A ZSH_HIGHLIGHT_STYLES
+ZSH_HIGHLIGHT_STYLES[globbing]='fg=magenta,bold'
+for prefix in /usr/local/share /usr/share; do
+  syntax_dir=$prefix/zsh-syntax-highlighting
+  if [[ -r $syntax_dir/zsh-syntax-highlighting.zsh ]]; then
+    source "$syntax_dir/zsh-syntax-highlighting.zsh"
+    break
+  fi
+done
