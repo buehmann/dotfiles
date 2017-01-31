@@ -25,15 +25,18 @@
 	keepBackup = false
 [mergetool "vimdiff"]
 	path = nvim
-[rerere]
-	enabled = true
-[rebase]
-	autoSquash = true
 [pull]
 	ff = only
 [push]
 	default = current
-
+[rerere]
+	enabled = true
+[rebase]
+	autoSquash = true
+[remote]
+	pushdefault = buehmann
+[user]
+	useConfigOnly = true
 # Include machine-specific config
 [include]
 	path = ~/.gitconfig.local
