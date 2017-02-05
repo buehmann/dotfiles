@@ -1,4 +1,5 @@
-" dein setup -----------------------------
+" vim: fdm=marker
+" dein setup {{{1 -----------------------------
 if &compatible
   set nocompatible
 endif
@@ -53,7 +54,7 @@ syntax enable
 "  call dein#install()
 "endif
 
-" End dein setup -------------------------
+" End dein setup }}}1 -------------------------
 
 let g:mapleader = ','
 
@@ -120,6 +121,14 @@ let g:ruby_space_errors = 1
 " hi ColorColumn guibg=black
 " hi SignColumn guibg=black
 
+" fzf: fuzzy finder {{{1
+" Command for git grep
+" - fzf#vim#grep(command, with_column, [options], [fullscreen])
+command! -bang -nargs=* GGrep
+  \ call fzf#vim#grep('git grep --line-number '.shellescape(<q-args>), 0, <bang>0)
+
+
+" Basic mappings {{{1
 map <Up> <Nop>
 map <Down> <Nop>
 map <Left> <Nop>
@@ -130,11 +139,6 @@ imap <Left> <Nop>
 imap <Right> <Nop>
 
 noremap <Esc> :nohl<CR>
-
-" Command for git grep
-" - fzf#vim#grep(command, with_column, [options], [fullscreen])
-command! -bang -nargs=* GGrep
-  \ call fzf#vim#grep('git grep --line-number '.shellescape(<q-args>), 0, <bang>0)
 
 map <C-n> :NERDTreeToggle<CR>
 
