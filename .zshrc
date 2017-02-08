@@ -138,5 +138,10 @@ done
 (( $+commands[dircolors] )) && eval "$(dircolors -b)"
 ls --color -d . &>/dev/null && alias ls='ls --color=tty' || { ls -G . &>/dev/null && alias ls='ls -G' }
 
+# Remap Caps-Lock to Escape
+if (( $+commands[xmodmap] )); then
+  xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
+fi
+
 # Take advantage of $LS_COLORS for completion as well.
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
