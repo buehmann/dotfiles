@@ -4,6 +4,8 @@
 	cb = check-branches
 	ci = ci-status -v
 	co = checkout
+	fo = fetch origin
+	fa = fetch --all
 	l1 = log --oneline -n 1
 	lo = log --oneline
 	p  = pull-request -o
