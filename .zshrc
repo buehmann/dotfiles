@@ -123,6 +123,9 @@ export LESS="-FRSX"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# added by travis gem
+[ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
+
 # https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/docs/highlighters/main.md
 typeset -A ZSH_HIGHLIGHT_STYLES
 ZSH_HIGHLIGHT_STYLES[globbing]='fg=magenta,bold'
