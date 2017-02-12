@@ -107,7 +107,9 @@ set display+=lastline
 set number relativenumber
 
 set hlsearch incsearch
-set inccommand=nosplit " show :s preview as you type
+if exists('&inccommand')
+  set inccommand=nosplit " show :s preview as you type
+endif
 
 set pastetoggle=<F10>
 
