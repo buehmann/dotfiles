@@ -22,6 +22,7 @@ if dein#load_state(s:vim)
   call dein#add('junegunn/fzf.vim')
   call dein#add('kana/vim-textobj-indent')
   call dein#add('kana/vim-textobj-user')
+  call dein#add('machakann/vim-highlightedyank')
   call dein#add('mhartington/oceanic-next')
   call dein#add('nelstrom/vim-textobj-rubyblock')
   call dein#add('neomake/neomake')
@@ -106,6 +107,7 @@ set display+=lastline
 set number relativenumber
 
 set hlsearch incsearch
+set inccommand=nosplit " show :s preview as you type
 
 set pastetoggle=<F10>
 
