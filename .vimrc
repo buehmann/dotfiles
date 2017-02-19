@@ -68,6 +68,8 @@ endif
 colorscheme OceanicNext
 let g:airline_theme='oceanicnext'
 
+let g:markdown_fenced_languages = ['ruby']
+
 let g:airline#extensions#tabline#enabled = 0
 let g:airline_powerline_fonts = 1
 
@@ -90,13 +92,16 @@ let g:ctrlp_clear_cache_on_exit = 0
 let g:CommandTFileScanner = 'git'
 
 set title
+
+" Indentation {{{1
 set shiftwidth=2
 set expandtab
 set shiftround
 set smartindent
 set autoindent
+" }}}1
 
-set noshowmode
+set noshowmode " displayed in airline
 set modeline modelines=3
 set mouse=a
 set ruler
@@ -106,10 +111,12 @@ set scrolloff=2 sidescrolloff=5
 set display+=lastline
 set number relativenumber
 
+" Search & replace {{{1
 set hlsearch incsearch
 if exists('&inccommand')
   set inccommand=nosplit " show :s preview as you type
 endif
+" }}}1
 
 set pastetoggle=<F10>
 
