@@ -129,13 +129,18 @@ export LESS="-FRSX"
 # https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/docs/highlighters/main.md
 typeset -A ZSH_HIGHLIGHT_STYLES
 ZSH_HIGHLIGHT_STYLES[globbing]='fg=magenta,bold'
-for prefix in /usr/local/share /usr/share; do
-  syntax_dir=$prefix/zsh-syntax-highlighting
-  if [[ -r $syntax_dir/zsh-syntax-highlighting.zsh ]]; then
-    source "$syntax_dir/zsh-syntax-highlighting.zsh"
-    break
-  fi
-done
+
+# anonymous function for scoping of local variables
+function {
+  local prefix syntax
+  for prefix in /usr/{local/,}share; do
+    syntax=$prefix/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+    if [[ -r $syntax ]]; then
+      source "$syntax"
+      break
+    fi
+  done
+}
 
 # ls coloring (defaults in .oh-my-zsh/lib/theme-and-appearance.zsh do not recognize GNU ls on Mac)
 (( $+commands[dircolors] )) && eval "$(dircolors -b)"
