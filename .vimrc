@@ -132,12 +132,14 @@ let g:ruby_space_errors = 1
 " hi ColorColumn guibg=black
 " hi SignColumn guibg=black
 
-" fzf: fuzzy finder {{{1
+" Grepping {{{1
 " Command for git grep
 " - fzf#vim#grep(command, with_column, [options], [fullscreen])
 command! -bang -nargs=* GGrep
   \ call fzf#vim#grep('git grep --line-number '.shellescape(<q-args>), 0, <bang>0)
 
+nnoremap gr :Ggrep <cword><CR>:cw<CR>
+nnoremap gR :Ggrep '\b<cword>\b'<CR>:cw<CR>
 
 " Basic mappings {{{1
 map <Up> <Nop>
