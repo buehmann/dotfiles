@@ -1,6 +1,7 @@
 # vim:ft=gitconfig:noet:sw=8
 [alias]
 	bb = branch -r --list 'buehmann/*'
+	br = branch
 	cb = check-branches
 	ci = ci-status -v
 	co = checkout
