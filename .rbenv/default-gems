@@ -1,3 +1,4 @@
 bundler
 neovim
 command-t
+gem-ripper-tags
