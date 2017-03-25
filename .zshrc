@@ -119,7 +119,7 @@ bindkey -r "\M-B"
 
 export GITHUB_HOST=github.fidor.de
 export GIT=hub
-export LESS="-FRSX"
+export LESS="-FRX"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
