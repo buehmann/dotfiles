@@ -1,4 +1,5 @@
+gem-ripper-tags
 bundler
 neovim
 command-t
-gem-ripper-tags
+travis
