@@ -111,6 +111,8 @@ set scrolloff=2 sidescrolloff=5
 set display+=lastline
 set number relativenumber
 
+nnoremap <Leader>c :set cursorline!<CR>
+
 " Search & replace {{{1
 set hlsearch incsearch
 if exists('&inccommand')

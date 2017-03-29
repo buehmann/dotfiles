@@ -10,6 +10,7 @@
 	fo = fetch origin
 	l1 = log --oneline -n 1
 	lo = log --oneline
+	mt = mergetool
 	p  = pull-request -o
 [color]
 	ui = true
