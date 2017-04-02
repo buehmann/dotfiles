@@ -71,7 +71,9 @@ let g:airline_theme='oceanicnext'
 let g:markdown_fenced_languages = ['ruby']
 
 let g:airline#extensions#tabline#enabled = 0
-let g:airline_powerline_fonts = 1
+if $TERM != 'linux'
+  let g:airline_powerline_fonts = 1
+endif
 
 if has('mouse_sgr')
   set ttymouse=sgr
