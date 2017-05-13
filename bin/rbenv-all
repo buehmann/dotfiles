@@ -1,0 +1,7 @@
+#!/bin/bash
+export RBENV_VERSION
+for RBENV_VERSION in $(rbenv versions --bare); do
+  rbenv version
+  "$@"
+  echo
+done
