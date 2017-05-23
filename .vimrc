@@ -125,12 +125,6 @@ set pastetoggle=<F10>
 
 runtime! macros/matchit.vim
 
-augroup filetype_ruby
-  autocmd!
-  autocmd Filetype ruby setlocal shiftwidth=2 sts=2 expandtab textwidth=80
-augroup END
-let g:ruby_space_errors = 1
-
 " set colorcolumn=+0
 " hi ColorColumn guibg=black
 " hi SignColumn guibg=black
@@ -209,3 +203,15 @@ map <C-n> :NERDTreeToggle<CR>
 noremap <leader>gb :Gblame<CR>
 noremap <leader>gh :Gbrowse<CR>
 noremap <leader>gs :Gstatus<CR>
+
+" File types
+augroup filetype_ssh
+  autocmd!
+  au BufNewFile,BufRead */.ssh/config.d/*.ssh setf sshconfig
+augroup END
+
+augroup filetype_ruby
+  autocmd!
+  autocmd Filetype ruby setlocal shiftwidth=2 sts=2 expandtab textwidth=80
+augroup END
+let g:ruby_space_errors = 1
