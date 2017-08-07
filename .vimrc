@@ -79,7 +79,7 @@ if has('mouse_sgr')
 endif
 
 set updatetime=1500
-let g:gitgutter_sign_column_always = 1
+set signcolumn=yes
 
 let g:github_enterprise_urls = ['https://github.fidor.de']
 let g:is_bash = 1
