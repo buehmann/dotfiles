@@ -9,7 +9,7 @@
 	ff = merge --ff-only
 	fo = fetch origin
 	l1 = log --oneline -n 1
-	lo = log --oneline
+	lo = log --oneline --left-right
 	mt = mergetool
 	p  = pull-request -o
 [color]
