@@ -92,6 +92,8 @@ let g:NERDTreeQuitOnOpen = 1
 let g:ctrlp_clear_cache_on_exit = 0
 let g:CommandTFileScanner = 'git'
 
+let g:vimrubocop_rubocop_cmd = 'bundle exec rubocop '
+
 set title
 
 " Indentation {{{1
