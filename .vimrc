@@ -124,6 +124,7 @@ endif
 " }}}1
 
 set pastetoggle=<F10>
+set clipboard+=unnamedplus
 
 runtime! macros/matchit.vim
 
