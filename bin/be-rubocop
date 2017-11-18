@@ -1,0 +1,6 @@
+#!/bin/bash
+if [ -f Gemfile ]; then
+  exec bundle exec rubocop "$@"
+else
+  exec rubocop "$@"
+fi
