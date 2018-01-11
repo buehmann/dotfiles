@@ -149,3 +149,5 @@ ls --color -d . &>/dev/null && alias ls='ls --color=tty' || { ls -G . &>/dev/nul
 
 # Take advantage of $LS_COLORS for completion as well.
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+
+[ -f ~/.iterm2_shell_integration.zsh ] && source ~/.iterm2_shell_integration.zsh
