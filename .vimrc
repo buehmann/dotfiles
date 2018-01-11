@@ -79,7 +79,9 @@ if has('mouse_sgr')
 endif
 
 set updatetime=1500
-set signcolumn=yes
+if has('signcolumn')
+  set signcolumn=yes
+endif
 
 let g:github_enterprise_urls = ['https://github.fidor.de']
 let g:is_bash = 1
