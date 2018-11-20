@@ -104,6 +104,7 @@ alias co="c|o"
 alias diff="colordiff"
 alias vim=nvim
 alias vimdiff="nvim -d"
+alias view="nvim -R"
 alias b="bc -lq"
 
 alias dotfiles="GIT_DIR=~/.dotfiles GIT_WORK_TREE=~ git"
