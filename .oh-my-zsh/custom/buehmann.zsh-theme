@@ -1,5 +1,14 @@
+function git_working_dir_info() {
+  if command git rev-parse --git-dir &>/dev/null; then
+    local dir=$(basename "$(git rev-parse --show-toplevel)")
+    if [[ -n $dir && $dir != ${PWD##*/} ]]; then
+      echo "$dir:"
+    fi
+  fi
+}
+
 local ret_status="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ %s)"
-PROMPT='${ret_status}%{$fg_bold[green]%}%p %{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
+PROMPT='${ret_status}%{$fg_bold[green]%}%p %{$fg[cyan]%}$(git_working_dir_info)%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
 
 ZSH_THEME_GIT_PROMPT_PREFIX="(%{$fg[red]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
