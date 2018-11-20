@@ -70,6 +70,7 @@ if [[ -d $coreutils ]]; then
   export PATH=$coreutils/gnubin:$PATH
 fi
 
+export PATH=$HOME/dev/scheduler_tools/bin:$PATH
 export PATH=$HOME/dev/deploy-tools/bin:$PATH
 export PATH=$HOME/.rbenv/shims:$PATH
 export PATH=$HOME/bin:$PATH
