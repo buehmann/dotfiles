@@ -224,3 +224,6 @@ augroup filetype_ruby
   autocmd Filetype ruby setlocal shiftwidth=2 sts=2 expandtab textwidth=80
 augroup END
 let g:ruby_space_errors = 1
+
+" Folding {{{1
+" let g:xml_syntax_folding=1
