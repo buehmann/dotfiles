@@ -208,6 +208,8 @@ imap <Left> <Nop>
 imap <Right> <Nop>
 
 noremap <Esc> :nohl<CR>
+nnoremap <F1> <Esc>
+inoremap <F1> <Esc>
 
 map <C-n> :NERDTreeToggle<CR>
 
