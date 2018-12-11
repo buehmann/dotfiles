@@ -155,3 +155,14 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 if [[ -n $SSH_CONNECTION ]]; then
   [ -f ~/.iterm2_shell_integration.zsh ] && source ~/.iterm2_shell_integration.zsh
 fi
+
+# Delete Git's official completions to allow Zsh's official Git completions to work.
+# This is also necessary for hub's Zsh completions to work:
+# https://github.com/github/hub/issues/1956.
+function () {
+  GIT_ZSH_COMPLETIONS_FILE_PATH="$(brew --prefix)/share/zsh/site-functions/_git"
+  if [ -f $GIT_ZSH_COMPLETIONS_FILE_PATH ]
+  then
+    rm $GIT_ZSH_COMPLETIONS_FILE_PATH
+  fi
+}
