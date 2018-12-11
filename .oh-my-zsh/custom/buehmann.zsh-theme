@@ -2,7 +2,7 @@ function git_working_dir_info() {
   if command git rev-parse --git-dir &>/dev/null; then
     local dir=$(basename "$(git rev-parse --show-toplevel)")
     if [[ -n $dir && $dir != ${PWD##*/} ]]; then
-      echo "$dir:"
+      echo "$dir : "
     fi
   fi
 }
