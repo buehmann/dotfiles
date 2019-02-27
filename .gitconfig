@@ -25,7 +25,7 @@
 	singleKey = true
 [log]
 	decorate = short
-	date = default-local
+	date = auto:human
 [merge]
 	tool = vimdiff
 [mergetool]
