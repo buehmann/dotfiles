@@ -152,9 +152,7 @@ ls --color -d . &>/dev/null && alias ls='ls --color=tty' || { ls -G . &>/dev/nul
 # Take advantage of $LS_COLORS for completion as well.
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 
-if [[ -n $SSH_CONNECTION ]]; then
-  [ -f ~/.iterm2_shell_integration.zsh ] && source ~/.iterm2_shell_integration.zsh
-fi
+[ -f ~/.iterm2_shell_integration.zsh ] && source ~/.iterm2_shell_integration.zsh
 
 # Delete Git's official completions to allow Zsh's official Git completions to work.
 # This is also necessary for hub's Zsh completions to work:
