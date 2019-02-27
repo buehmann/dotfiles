@@ -108,7 +108,7 @@ set title
 set shiftwidth=2
 set expandtab
 set shiftround
-set smartindent
+" set smartindent
 set autoindent
 " }}}1
 
