@@ -158,6 +158,7 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 # This is also necessary for hub's Zsh completions to work:
 # https://github.com/github/hub/issues/1956.
 function () {
+  (( $+commands[brew] )) || return
   GIT_ZSH_COMPLETIONS_FILE_PATH="$(brew --prefix)/share/zsh/site-functions/_git"
   if [ -f $GIT_ZSH_COMPLETIONS_FILE_PATH ]
   then
