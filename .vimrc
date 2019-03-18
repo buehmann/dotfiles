@@ -57,6 +57,7 @@ syntax enable
 " End dein setup }}}1 -------------------------
 
 let g:mapleader = ','
+noremap \ ,
 
 if has('termguicolors')
   set termguicolors
