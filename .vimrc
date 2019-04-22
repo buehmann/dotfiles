@@ -89,9 +89,9 @@ let g:is_bash = 1
 
 let g:neomake_ruby_enabled_makers = ['rubocop']
 let g:neomake_ruby_rubocop_exe = 'be-rubocop'
-if exists("*neomake#configure#automake")
-  call neomake#configure#automake('nw', 1000)
-endif
+" if exists("*neomake#configure#automake")
+  call neomake#configure#automake('rnw', 750)
+" endif
 
 let g:python_host_prog = '/usr/bin/python2'
 let g:python3_host_prog = '/usr/bin/python3'
