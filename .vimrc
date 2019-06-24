@@ -119,6 +119,8 @@ set modeline modelines=3
 set mouse=a
 set ruler
 set wildmenu
+set wildmode=longest,list:longest,full
+set wildignorecase
 set laststatus=2
 set scrolloff=2 sidescrolloff=5
 set display+=lastline
