@@ -37,7 +37,6 @@ if dein#load_state(s:vim)
   call dein#add('tpope/vim-surround')
   call dein#add('vim-airline/vim-airline')
   call dein#add('vim-scripts/confluencewiki.vim', { 'on_ft': 'confluencewiki' })
-  call dein#add('wincent/command-t')
 
   " You can specify revision/branch/tag.
   " call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
