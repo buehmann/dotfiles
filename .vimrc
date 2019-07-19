@@ -89,9 +89,13 @@ let g:is_bash = 1
 let g:neomake_ruby_enabled_makers = ['rubocop']
 let g:neomake_ruby_rubocop_exe = 'be-rubocop'
 let g:neomake_open_list = 2
-" if exists("*neomake#configure#automake")
-  call neomake#configure#automake('rnw', 750)
-" endif
+call neomake#configure#automake('rnw', 750)
+
+" https://github.com/neomake/neomake/issues/1455
+augroup buehmann_qf
+  autocmd!
+  autocmd QuitPre * if &filetype != 'qf' | lclose | cclose | endif
+augroup END
 
 let g:python_host_prog = '/usr/bin/python2'
 let g:python3_host_prog = '/usr/bin/python3'
