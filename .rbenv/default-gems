@@ -3,3 +3,4 @@ bundler
 neovim
 command-t
 travis
+rubocop
