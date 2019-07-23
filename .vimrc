@@ -97,25 +97,6 @@ augroup buehmann_qf
   autocmd QuitPre * if &filetype != 'qf' | lclose | cclose | endif
 augroup END
 
-" overwrite maker function for rubocop
-call neomake#makers#ft#ruby#rubocop()
-function! neomake#makers#ft#ruby#rubocop() abort
-    let l:maker = {
-        \ 'args': ['--format', 'emacs', '--force-exclusion', '--display-cop-names'],
-        \ 'errorformat': '%f:%l:%c: %t: %m,%E%f:%l: %m',
-        \ 'postprocess': function('neomake#makers#ft#ruby#RubocopEntryProcess'),
-        \ 'output_stream': 'stdout',
-        \ }
-
-    function! l:maker.supports_stdin(jobinfo) abort
-      let self.args += ['--stdin', '%:.']
-      let self.tempfile_name = ''
-      return 1
-    endfunction
-
-    return l:maker
-endfunction
-
 let g:python_host_prog = '/usr/bin/python2'
 let g:python3_host_prog = '/usr/bin/python3'
 
