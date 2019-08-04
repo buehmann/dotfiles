@@ -28,6 +28,9 @@ Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-scripts/confluencewiki.vim', { 'for': 'confluencewiki' }
 
+Plug 'editorconfig/editorconfig-vim'
+let g:EditorConfig_exclude_patterns = ['fugitive://.\*']
+
 call plug#end()
 
 " End plugin setup }}}1 -------------------------
