@@ -35,6 +35,9 @@ call plug#end()
 
 " End plugin setup }}}1 -------------------------
 
+" Avoid :intro message
+set shortmess+=I
+
 let g:mapleader = ','
 noremap \ ,
 
