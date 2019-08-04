@@ -1,59 +1,37 @@
 " vim: fdm=marker
-" dein setup {{{1 -----------------------------
+" plugin setup {{{1 -----------------------------
 if &compatible
   set nocompatible
 endif
 
-let s:vim = "~/.vim"
-let s:dein = s:vim . "/repos/github.com/Shougo/dein.vim"
-let &runtimepath .= "," . s:dein
+call plug#begin('~/.local/share/nvim/plugged')
 
-if dein#load_state(s:vim)
-  call dein#begin(s:vim)
+Plug 'airblade/vim-gitgutter'
+Plug 'christoomey/vim-sort-motion'
+Plug 'junegunn/fzf', { 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'kana/vim-textobj-indent'
+Plug 'kana/vim-textobj-user'
+Plug 'machakann/vim-highlightedyank'
+Plug 'mhartington/oceanic-next'
+Plug 'nelstrom/vim-textobj-rubyblock'
+Plug 'neomake/neomake'
+Plug 'ngmy/vim-rubocop'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'tpope/vim-bundler'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-rhubarb'
+Plug 'tpope/vim-surround'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-scripts/confluencewiki.vim', { 'for': 'confluencewiki' }
 
-  " Let dein manage dein
-  call dein#add(s:dein)
+call plug#end()
 
-  " Add or remove your plugins here:
-  call dein#add('airblade/vim-gitgutter')
-  call dein#add('christoomey/vim-sort-motion')
-  call dein#add('junegunn/fzf', { 'build': './install --all' })
-  call dein#add('junegunn/fzf.vim')
-  call dein#add('kana/vim-textobj-indent')
-  call dein#add('kana/vim-textobj-user')
-  call dein#add('machakann/vim-highlightedyank')
-  call dein#add('mhartington/oceanic-next')
-  call dein#add('nelstrom/vim-textobj-rubyblock')
-  call dein#add('neomake/neomake')
-  call dein#add('ngmy/vim-rubocop')
-  call dein#add('scrooloose/nerdtree', { 'on_cmd': 'NERDTreeToggle' })
-  call dein#add('tpope/vim-bundler')
-  call dein#add('tpope/vim-commentary')
-  call dein#add('tpope/vim-endwise')
-  call dein#add('tpope/vim-fugitive')
-  call dein#add('tpope/vim-rails')
-  call dein#add('tpope/vim-repeat')
-  call dein#add('tpope/vim-rhubarb')
-  call dein#add('tpope/vim-surround')
-  call dein#add('vim-airline/vim-airline')
-  call dein#add('vim-scripts/confluencewiki.vim', { 'on_ft': 'confluencewiki' })
-
-  " You can specify revision/branch/tag.
-  " call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
-
-  call dein#end()
-  call dein#save_state()
-endif
-
-filetype plugin indent on
-syntax enable
-
-" If you want to install not installed plugins on startup.
-"if dein#check_install()
-"  call dein#install()
-"endif
-
-" End dein setup }}}1 -------------------------
+" End plugin setup }}}1 -------------------------
 
 let g:mapleader = ','
 noremap \ ,
