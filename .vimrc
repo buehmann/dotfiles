@@ -16,6 +16,7 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'mhartington/oceanic-next'
 Plug 'nelstrom/vim-textobj-rubyblock'
 Plug 'neomake/neomake'
+Plug 'qxxxb/vim-searchhi'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-commentary'
