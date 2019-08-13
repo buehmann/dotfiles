@@ -1,6 +1,5 @@
 gem-ripper-tags
 bundler
 neovim
-command-t
 travis
 rubocop
