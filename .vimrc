@@ -1,5 +1,5 @@
 " vim: fdm=marker
-" plugin setup {{{1 -----------------------------
+" Plugin setup {{{1
 if &compatible
   set nocompatible
 endif
@@ -35,7 +35,7 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.\*']
 
 call plug#end()
 
-" End plugin setup }}}1 -------------------------
+" End plugin setup }}}1
 
 " Avoid :intro message
 set shortmess+=I
@@ -87,9 +87,6 @@ let g:python3_host_prog = '/usr/bin/python3'
 
 let g:NERDTreeQuitOnOpen = 1
 
-let g:ctrlp_clear_cache_on_exit = 0
-let g:CommandTFileScanner = 'git'
-
 let g:vimrubocop_rubocop_cmd = 'bundle exec rubocop '
 
 set title
@@ -98,7 +95,6 @@ set title
 set shiftwidth=2
 set expandtab
 set shiftround
-" set smartindent
 set autoindent
 " }}}1
 
@@ -127,10 +123,6 @@ set pastetoggle=<F10>
 set clipboard+=unnamedplus
 
 runtime! macros/matchit.vim
-
-" set colorcolumn=+0
-" hi ColorColumn guibg=black
-" hi SignColumn guibg=black
 
 " Grepping {{{1
 " Command for git grep
@@ -161,7 +153,7 @@ noremap <leader>gb :Gblame<CR>
 noremap <leader>gh :Gbrowse<CR>
 noremap <leader>gs :Gstatus<CR>
 
-" File types
+" File types {{{1
 augroup filetype_ssh
   autocmd!
   au BufNewFile,BufRead */.ssh/config.d/*.ssh setf sshconfig
@@ -172,6 +164,3 @@ augroup filetype_ruby
   autocmd Filetype ruby setlocal shiftwidth=2 sts=2 expandtab textwidth=80
 augroup END
 let g:ruby_space_errors = 1
-
-" Folding {{{1
-" let g:xml_syntax_folding=1
