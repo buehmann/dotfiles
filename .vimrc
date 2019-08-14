@@ -63,7 +63,7 @@ if has('mouse_sgr')
   set ttymouse=sgr
 endif
 
-set updatetime=1500
+set updatetime=150
 if has('signcolumn')
   set signcolumn=yes
 endif
