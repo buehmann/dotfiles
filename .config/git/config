@@ -15,6 +15,11 @@
 	p  = pull-request -o
 [color]
 	ui = true
+[core]
+	splitIndex = true
+	untrackedCache = true
+[fetch]
+	prune = true
 [grep]
 	patternType = perl
 [hub]
@@ -42,10 +47,12 @@
 	autoSquash = true
 [remote]
 	pushdefault = buehmann
+[url "git@github.fidor.de:"]
+	insteadof = git://github.fidor.de/
 [user]
+	name = Andreas Bühmann
 	useConfigOnly = true
+
 # Include machine-specific config
 [include]
-	path = ~/.gitconfig.local
-[fetch]
-	prune = true
+	path = config.local
