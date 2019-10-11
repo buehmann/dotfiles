@@ -56,3 +56,5 @@
 # Include machine-specific config
 [include]
 	path = config.local
+[icdiff]
+	options =
