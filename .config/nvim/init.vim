@@ -43,7 +43,7 @@ set shortmess+=I
 let g:mapleader = ','
 noremap \ ,
 
-if has('termguicolors')
+if has('termguicolors') && $TERM_PROGRAM != 'Apple_Terminal'
   set termguicolors
 else
   set t_Co=256
