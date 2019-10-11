@@ -63,12 +63,15 @@ source $ZSH/oh-my-zsh.sh
 # export MANPATH="/usr/local/man:$MANPATH"
 export MANPATH="$HOME/share/man:$MANPATH"
 
-# GNU coreutils on Mac OS (brew)
-coreutils=/usr/local/opt/coreutils/libexec
-if [[ -d $coreutils ]]; then
-  export MANPATH=$coreutils/gnuman:$MANPATH
-  export PATH=$coreutils/gnubin:$PATH
-fi
+# GNU utils on Mac OS (brew)
+gnu=(coreutils gnu-tar grep gnu-sed findutils)
+for g in ${gnu[@]}; do
+  utils=/usr/local/opt/$g/libexec
+  if [[ -d $utils ]]; then
+    export MANPATH=$utils/gnuman:$MANPATH
+    export PATH=$utils/gnubin:$PATH
+  fi
+done
 
 if (( $+commands[brew] )); then
   export PATH="/usr/local/opt/qt@5.5/bin:$PATH"
