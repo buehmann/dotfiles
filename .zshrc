@@ -171,3 +171,6 @@ function () {
     rm $GIT_ZSH_COMPLETIONS_FILE_PATH
   fi
 }
+
+# rbenv shell integration
+eval "$(rbenv init -)"
