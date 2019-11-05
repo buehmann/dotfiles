@@ -22,6 +22,7 @@
 	untrackedCache = true
 [fetch]
 	prune = true
+	writeCommitGraph = true
 [grep]
 	patternType = perl
 [hub]
