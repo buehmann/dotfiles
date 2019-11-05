@@ -13,6 +13,8 @@
 	lo = log --oneline --left-right
 	mt = mergetool
 	p  = pull-request -o
+[branch]
+	sort = committerdate
 [color]
 	ui = true
 [core]
