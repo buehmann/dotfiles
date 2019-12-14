@@ -37,6 +37,15 @@ set number relativenumber
 
 nnoremap <Leader>c :set cursorline!<CR>
 
+" Status line {{{1
+set statusline=\ %(%h\ %)%f%(\ %m%r%)
+set statusline+=%=
+set statusline+=\ %{&filetype}
+set statusline+=\ \ %{&fileencoding?&fileencoding:&encoding}
+set statusline+=\[%{&fileformat}\]
+set statusline+=\ \ %3p%%
+set statusline+=\ %4l/%L\ :%3c\ 
+
 " Search & replace {{{1
 set hlsearch incsearch
 if exists('&inccommand')
