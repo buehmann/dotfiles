@@ -1,5 +1,8 @@
 " vim: fdm=marker
 
+set background=dark
+syntax on
+
 " Avoid :intro message
 set shortmess+=I
 
