@@ -73,3 +73,9 @@ imap <Right> <Nop>
 
 nnoremap <F1> <Esc>
 inoremap <F1> <Esc>
+
+" File types {{{1
+augroup filetype_dbaccess
+  autocmd!
+  autocmd BufNewFile,BufRead /tmp/rsq* set filetype=sql | SQLSetType sqlinformix
+augroup END
