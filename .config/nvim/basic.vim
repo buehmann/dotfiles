@@ -54,6 +54,9 @@ set hlsearch incsearch
 if exists('&inccommand')
   set inccommand=nosplit " show :s preview as you type
 endif
+set ignorecase
+set smartcase
+
 " }}}1
 
 runtime! macros/matchit.vim
