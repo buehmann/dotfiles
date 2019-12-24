@@ -11,12 +11,12 @@ Plug 'christoomey/vim-sort-motion'
 Plug 'junegunn/fzf', { 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'kana/vim-textobj-indent'
+Plug 'kana/vim-textobj-lastpat'
 Plug 'kana/vim-textobj-user'
 Plug 'machakann/vim-highlightedyank'
 Plug 'mhartington/oceanic-next'
 Plug 'nelstrom/vim-textobj-rubyblock'
 Plug 'neomake/neomake'
-Plug 'qxxxb/vim-searchhi'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-commentary'
