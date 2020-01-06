@@ -61,3 +61,5 @@
 	path = config.local
 [icdiff]
 	options =
+[advice]
+	detachedHead = false
