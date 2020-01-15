@@ -1,16 +1,11 @@
 # vim:ft=gitconfig:noet:sw=8
 [alias]
-	bb = branch -r --list 'buehmann/*'
 	br = branch
-	cb = check-branches
 	ci = ci-status -v
 	co = checkout
-	fa = fetch --all
 	fb = fetch buehmann
 	ff = merge --ff-only
 	fo = fetch origin
-	l1 = log --oneline -n 1
-	lo = log --oneline --left-right
 	mt = mergetool
 	p  = pull-request -o
 [branch]
