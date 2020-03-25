@@ -10,6 +10,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'christoomey/vim-sort-motion'
 Plug 'junegunn/fzf', { 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'junegunn/goyo.vim'
 Plug 'kana/vim-textobj-indent'
 Plug 'kana/vim-textobj-lastpat'
 Plug 'kana/vim-textobj-user'
