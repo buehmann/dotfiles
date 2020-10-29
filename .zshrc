@@ -69,6 +69,7 @@ plugins=(git github ruby rails bundler docker docker-compose kubectl colored-man
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+setopt share_history
 
 # export MANPATH="/usr/local/man:$MANPATH"
 export MANPATH="$HOME/share/man:$MANPATH"
