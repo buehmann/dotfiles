@@ -37,6 +37,7 @@ set laststatus=2
 set scrolloff=2 sidescrolloff=5
 set display+=lastline
 set number relativenumber
+set listchars=tab:>\ ,trail:-,nbsp:+,space:·
 
 nnoremap <Leader>c :set cursorline!<CR>
 
