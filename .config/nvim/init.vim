@@ -97,9 +97,9 @@ noremap <Esc> :nohl<CR>
 
 map <C-n> :NERDTreeToggle<CR>
 
-noremap <leader>gb :Gblame<CR>
-noremap <leader>gh :Gbrowse<CR>
-noremap <leader>gs :Gstatus<CR>
+noremap <leader>gb :Git blame<CR>
+noremap <leader>gh :GBrowse<CR>
+noremap <leader>gs :Git<CR>
 
 " File types {{{1
 augroup filetype_ssh
