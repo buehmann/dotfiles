@@ -58,3 +58,5 @@
 	options =
 [advice]
 	detachedHead = false
+[pack]
+	writeReverseIndex = true
