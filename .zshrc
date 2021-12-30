@@ -84,9 +84,6 @@ for g in ${gnu[@]}; do
   fi
 done
 
-if (( $+commands[brew] )); then
-  export PATH="/usr/local/opt/qt@5.5/bin:$PATH"
-fi
 export PATH=$HOME/dev/scheduler_tools/bin:$PATH
 export PATH=$HOME/dev/deploy-tools/bin:$PATH
 # export PATH=$HOME/.rbenv/shims:$PATH
