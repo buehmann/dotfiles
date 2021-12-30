@@ -123,7 +123,15 @@ if (( $+commands[hub] )); then
   alias git=hub
 fi
 
-alias dotfiles="GIT_DIR=~/.dotfiles GIT_WORK_TREE=~ git"
+function dotfiles() (
+  export GIT_DIR=~/.dotfiles GIT_WORK_TREE=~
+  if (($# == 0)); then
+    "$SHELL"
+  else
+    git "$@"
+  fi
+)
+
 alias .f=dotfiles
 # dotfiles config status.showUntrackedFiles no
 # dotfiles remote add buehmann git@github.com:buehmann/dotfiles.git
