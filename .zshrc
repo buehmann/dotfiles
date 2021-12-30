@@ -191,3 +191,8 @@ function () {
 
 # rbenv shell integration
 eval "$(rbenv init -)"
+
+# perl5 config for Homebrew
+if (( $+commands[brew] )); then
+  eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib=$HOME/perl5)"
+fi
