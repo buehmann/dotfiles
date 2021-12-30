@@ -64,7 +64,7 @@ BUNDLED_COMMANDS=(rubocop)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git github gh ruby rails bundler docker docker-compose kubectl colored-man-pages)
+plugins=(git gh ruby rails bundler docker docker-compose kubectl colored-man-pages)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -121,6 +121,10 @@ alias vim=nvim
 alias vimdiff="nvim -d"
 alias view="nvim -R"
 alias b="bc -lq"
+
+if (( $+commands[hub] )); then
+  alias git=hub
+fi
 
 alias dotfiles="GIT_DIR=~/.dotfiles GIT_WORK_TREE=~ git"
 alias .f=dotfiles
