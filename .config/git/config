@@ -10,6 +10,8 @@
 	p  = pull-request -o
 [branch]
 	sort = committerdate
+[checkout]
+	defaultRemote = origin
 [color]
 	ui = true
 [core]
