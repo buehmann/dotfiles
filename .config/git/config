@@ -14,6 +14,7 @@
 	sort = committerdate
 [checkout]
 	defaultRemote = origin
+	workers = -1 # use all available logical cores
 [color]
 	ui = true
 [core]
