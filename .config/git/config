@@ -1,4 +1,6 @@
 # vim:ft=gitconfig:noet:sw=8
+[advice]
+	detachedHead = false
 [alias]
 	br = branch
 	ci = ci-status -v
@@ -26,6 +28,8 @@
 	host = github.com
 	host = github.fidor.de
 	protocol = ssh
+[icdiff]
+	options =
 [interactive]
 	singleKey = true
 [log]
@@ -37,6 +41,8 @@
 	keepBackup = false
 [mergetool "vimdiff"]
 	path = nvim
+[pack]
+	writeReverseIndex = true
 [pull]
 	ff = only
 [push]
@@ -56,9 +62,3 @@
 # Include machine-specific config
 [include]
 	path = config.local
-[icdiff]
-	options =
-[advice]
-	detachedHead = false
-[pack]
-	writeReverseIndex = true
