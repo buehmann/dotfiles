@@ -119,10 +119,6 @@ alias vimdiff="nvim -d"
 alias view="nvim -R"
 alias b="bc -lq"
 
-if (( $+commands[hub] )); then
-  alias git=hub
-fi
-
 function dotfiles() (
   export GIT_DIR=~/.dotfiles GIT_WORK_TREE=~
   if (($# == 0)); then
