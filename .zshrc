@@ -186,4 +186,6 @@ timezsh() {
   for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
 }
 
-_evalcache pyenv init -
+if (( $+commands[pyenv] )); then
+  _evalcache pyenv init -
+fi
