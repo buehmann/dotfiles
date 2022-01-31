@@ -64,7 +64,7 @@ BUNDLED_COMMANDS=(rubocop)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git gh ruby rails bundler docker docker-compose kubectl colored-man-pages pyenv)
+plugins=(git gh ruby rails bundler docker docker-compose kubectl colored-man-pages)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -86,7 +86,6 @@ done
 
 export PATH=$HOME/dev/scheduler_tools/bin:$PATH
 export PATH=$HOME/dev/deploy-tools/bin:$PATH
-# export PATH=$HOME/.rbenv/shims:$PATH
 export PATH=$HOME/bin:$PATH
 
 # You may need to manually set your language environment
@@ -173,22 +172,16 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 
 [ -f ~/.iterm2_shell_integration.zsh ] && source ~/.iterm2_shell_integration.zsh
 
-# Delete Git's official completions to allow Zsh's official Git completions to work.
-# This is also necessary for hub's Zsh completions to work:
-# https://github.com/github/hub/issues/1956.
-function () {
-  (( $+commands[brew] )) || return
-  GIT_ZSH_COMPLETIONS_FILE_PATH="$(brew --prefix)/share/zsh/site-functions/_git"
-  if [ -f $GIT_ZSH_COMPLETIONS_FILE_PATH ]
-  then
-    rm $GIT_ZSH_COMPLETIONS_FILE_PATH
-  fi
-}
-
 # rbenv shell integration
-eval "$(rbenv init -)"
+eval "$(rbenv init --no-rehash - zsh)"
 
 # perl5 config for Homebrew
 if (( $+commands[brew] )); then
   eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib=$HOME/perl5)"
 fi
+
+# https://blog.mattclemente.com/2020/06/26/oh-my-zsh-slow-to-load/
+timezsh() {
+  shell=${1-$SHELL}
+  for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
+}
