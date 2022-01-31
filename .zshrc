@@ -64,7 +64,7 @@ BUNDLED_COMMANDS=(rubocop)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git gh ruby rails bundler docker docker-compose kubectl colored-man-pages)
+plugins=(git gh ruby rails bundler docker docker-compose kubectl colored-man-pages evalcache)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -164,7 +164,7 @@ function {
 }
 
 # ls coloring (defaults in .oh-my-zsh/lib/theme-and-appearance.zsh do not recognize GNU ls on Mac)
-(( $+commands[dircolors] )) && eval "$(dircolors -b)"
+(( $+commands[dircolors] )) && _evalcache dircolors -b
 ls --color -d . &>/dev/null && alias ls='ls --color=tty' || { ls -G . &>/dev/null && alias ls='ls -G' }
 
 # Take advantage of $LS_COLORS for completion as well.
@@ -173,11 +173,11 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 [ -f ~/.iterm2_shell_integration.zsh ] && source ~/.iterm2_shell_integration.zsh
 
 # rbenv shell integration
-eval "$(rbenv init --no-rehash - zsh)"
+_evalcache rbenv init --no-rehash - zsh
 
 # perl5 config for Homebrew
 if (( $+commands[brew] )); then
-  eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib=$HOME/perl5)"
+  _evalcache perl -I$HOME/perl5/lib/perl5 -Mlocal::lib=$HOME/perl5
 fi
 
 # https://blog.mattclemente.com/2020/06/26/oh-my-zsh-slow-to-load/
@@ -185,3 +185,5 @@ timezsh() {
   shell=${1-$SHELL}
   for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
 }
+
+_evalcache pyenv init -
