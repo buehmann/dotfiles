@@ -3,13 +3,11 @@
 	detachedHead = false
 [alias]
 	br = branch
-	ci = ci-status -v
 	co = checkout
 	fb = fetch buehmann
 	ff = merge --ff-only
 	fo = fetch origin
 	mt = mergetool
-	p  = pull-request -o
 [branch]
 	sort = committerdate
 [checkout]
