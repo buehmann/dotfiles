@@ -61,3 +61,5 @@
 # Include machine-specific config
 [include]
 	path = config.local
+[init]
+	defaultBranch = main
