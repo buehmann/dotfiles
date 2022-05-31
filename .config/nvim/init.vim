@@ -99,9 +99,3 @@ map <C-n> :NERDTreeToggle<CR>
 noremap <leader>gb :Git blame<CR>
 noremap <leader>gh :GBrowse<CR>
 noremap <leader>gs :Git<CR>
-
-" File types {{{1
-augroup filetype_ssh
-  autocmd!
-  au BufNewFile,BufRead */.ssh/config.d/*.ssh setf sshconfig
-augroup END
