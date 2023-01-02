@@ -63,3 +63,5 @@
 	path = config.local
 [init]
 	defaultBranch = main
+[diff]
+	submodule = log
