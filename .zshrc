@@ -187,5 +187,5 @@ timezsh() {
 }
 
 if (( $+commands[pyenv] )); then
-  _evalcache pyenv init -
+  eval "$(pyenv init -)"
 fi
