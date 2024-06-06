@@ -23,6 +23,7 @@ Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
+Plug 'shumphrey/fugitive-gitlab.vim'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rhubarb'
@@ -56,6 +57,7 @@ if $TERM != 'linux'
   let g:airline_powerline_fonts = 1
 endif
 
+let g:fugitive_gitlab_domains = ['https://innersource.soprasteria.com']
 let g:github_enterprise_urls = ['https://github.fidor.de']
 let g:is_bash = 1
 
