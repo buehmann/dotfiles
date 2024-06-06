@@ -189,3 +189,11 @@ timezsh() {
 if (( $+commands[pyenv] )); then
   eval "$(pyenv init -)"
 fi
+
+# http(ie): Python Requests
+export REQUESTS_CA_BUNDLE=/usr/local/etc/ca-certificates/cert.pem
+
+function httpless {
+    # `httpless example.org'
+    http --pretty=all --print=hb "$@" | less -R
+}
