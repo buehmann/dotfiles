@@ -64,7 +64,7 @@ BUNDLED_COMMANDS=(rubocop)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(aws git gh ruby rails bundler docker docker-compose kubectl colored-man-pages evalcache)
+plugins=(aws git gh ruby rails bundler docker docker-compose colored-man-pages evalcache)
 
 source $ZSH/oh-my-zsh.sh
 
