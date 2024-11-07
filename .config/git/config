@@ -54,6 +54,8 @@
 	pushdefault = buehmann
 [url "git@github.fidor.de:"]
 	insteadof = git://github.fidor.de/
+[url "https://innersource.soprasteria.com/"]
+	insteadof = git@innersource.soprasteria.com:
 [user]
 	name = Andreas Bühmann
 	useConfigOnly = true
