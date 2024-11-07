@@ -67,3 +67,5 @@
 	defaultBranch = main
 [diff]
 	submodule = log
+[column]
+	ui = auto
