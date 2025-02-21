@@ -197,3 +197,7 @@ function httpless {
     # `httpless example.org'
     http --pretty=all --print=hb "$@" | less -R
 }
+function httpsless {
+    # `httpsless example.org'
+    https --pretty=all --print=hb "$@" | less -R
+}
