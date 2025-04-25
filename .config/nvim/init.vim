@@ -82,7 +82,6 @@ let g:vimrubocop_rubocop_cmd = 'bundle exec rubocop '
 
 set noshowmode " displayed in airline
 
-set pastetoggle=<F10>
 set clipboard+=unnamedplus
 
 " Grepping {{{1
