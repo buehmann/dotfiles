@@ -111,7 +111,6 @@ export EDITOR=nvim
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias be="bundle exec"
-alias co="c|o"
 alias diff="colordiff"
 alias vim=nvim
 alias vimdiff="nvim -d"
@@ -193,11 +192,14 @@ fi
 # http(ie): Python Requests
 export REQUESTS_CA_BUNDLE=/usr/local/etc/ca-certificates/cert.pem
 
-function httpless {
-    # `httpless example.org'
-    http --pretty=all --print=hb "$@" | less -R
+# httpless example.org
+# httpsless example.org
+function _httpless {
+  local cmd="$1"; shift
+  "$cmd" --pretty=all --print=hb "$@" | less -R
 }
-function httpsless {
-    # `httpsless example.org'
-    https --pretty=all --print=hb "$@" | less -R
-}
+alias httpless="_httpless http"
+alias httpsless="_httpless https"
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C terraform terraform
