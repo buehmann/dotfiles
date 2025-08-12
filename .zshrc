@@ -27,7 +27,7 @@ ZSH_THEME="buehmann"
 HYPHEN_INSENSITIVE="true"
 
 # Uncomment one of the following lines to change the auto-update behavior
-# zstyle ':omz:update' mode disabled  # disable automatic updates
+zstyle ':omz:update' mode disabled  # disable automatic updates
 # zstyle ':omz:update' mode auto      # update automatically without asking
 # zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
@@ -75,7 +75,7 @@ BUNDLED_COMMANDS=(rubocop)
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(aws git gh ruby rails bundler docker docker-compose colored-man-pages evalcache)
+plugins=(aws git colored-man-pages evalcache)
 
 source $ZSH/oh-my-zsh.sh
 
