@@ -86,14 +86,16 @@ setopt share_history
 export MANPATH="$HOME/share/man:$MANPATH"
 
 # GNU utils on Mac OS (brew)
-gnu=(coreutils gnu-tar grep gnu-sed findutils)
-for g in ${gnu[@]}; do
-  utils=$HOMEBREW_PREFIX/opt/$g/libexec
-  if [[ -d $utils ]]; then
-    export MANPATH=$utils/gnuman:$MANPATH
-    export PATH=$utils/gnubin:$PATH
-  fi
-done
+if (( $+commands[brew] )); then
+  gnu=(coreutils gnu-tar grep gnu-sed findutils)
+  for g in ${gnu[@]}; do
+    utils=$HOMEBREW_PREFIX/opt/$g/libexec
+    if [[ -d $utils ]]; then
+      export MANPATH=$utils/gnuman:$MANPATH
+      export PATH=$utils/gnubin:$PATH
+    fi
+  done
+fi
 
 export PATH=$HOME/dev/scheduler_tools/bin:$PATH
 export PATH=$HOME/dev/deploy-tools/bin:$PATH
@@ -204,7 +206,9 @@ if (( $+commands[pyenv] )); then
 fi
 
 # http(ie): Python Requests
-export REQUESTS_CA_BUNDLE=$HOMEBREW_PREFIX/etc/ca-certificates/cert.pem
+if (( $+commands[brew] )); then
+  export REQUESTS_CA_BUNDLE=$HOMEBREW_PREFIX/etc/ca-certificates/cert.pem
+fi
 
 # httpless example.org
 # httpsless example.org
