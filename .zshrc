@@ -98,7 +98,6 @@ if (( $+commands[brew] )); then
 fi
 
 export PATH=$HOME/dev/scheduler_tools/bin:$PATH
-export PATH=$HOME/dev/deploy-tools/bin:$PATH
 export PATH=$HOME/bin:$PATH
 
 # You may need to manually set your language environment
