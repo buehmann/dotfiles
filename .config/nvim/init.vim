@@ -64,6 +64,9 @@ let g:is_bash = 1
 
 let g:neomake_ruby_enabled_makers = ['rubocop']
 let g:neomake_ruby_rubocop_exe = 'be-rubocop'
+
+let g:neomake_sh_enabled_makers = ['shellcheck'] " disable 'sh'
+
 let g:neomake_open_list = 2
 call neomake#configure#automake('rnw', 750)
 
